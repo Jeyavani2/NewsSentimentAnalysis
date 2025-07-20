@@ -293,7 +293,7 @@ elif intro == "**_:blue[Check In for News App]_**":
                       st.error(f"Error fetching data: {response.status_code}")
                       st.write("Response content:", response.text)  # Print the error message if any
     elif selected_question == 'Cluster':    
-              dfvec=pd.read_csv(r'c:\users\91904\combined.csv')
+              dfvec=pd.read_csv(r'combined.csv')
               vect=TfidfVectorizer(stop_words='english',max_features=5000)
               dfvec['headline'] = dfvec['headline'].fillna('')
               dfvec['short_description'] = dfvec['short_description'].fillna('')

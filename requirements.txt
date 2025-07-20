@@ -12,5 +12,5 @@ boto3
 botocore
 urllib3
 mysql-connector-python
-SQLAlchmey
+SQLAlchemy
 string

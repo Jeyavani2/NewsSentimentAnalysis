@@ -372,7 +372,7 @@ elif intro == "**_:blue[Check In for News App]_**":
         # Assume you have a combined.csv or similar file with historical data
         # For a full yearly report, you'd need significantly more data than the GNews API free tier provides
         try:
-            df_report = pd.read_csv(r'c:\users\91904\combinedsent.csv')
+            df_report = pd.read_csv(r'combinedsent.csv')
             df_report['Date'] = pd.to_datetime(df_report['date']) # Ensure 'Date' column is datetime
             df_report['Year'] = df_report['Date'].dt.year
             df_report['Month'] = df_report['Date'].dt.month

@@ -1,0 +1,16 @@
+streamlit
+requests
+pandas
+numpy
+newsapi-python
+scikit-learn
+matplotlib
+wordcloud
+nltk
+Kaggle
+boto3
+botocore
+urllib3
+mysql-connector-python
+SQLAlchmey
+string

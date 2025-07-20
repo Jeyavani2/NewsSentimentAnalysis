@@ -35,7 +35,7 @@ except LookupError:
     st.success("NLTK 'vader_lexicon' downloaded successfully.") # Using st.success for Streamlit UI feedback
 except Exception as e:
     # This catch-all is good for debugging but for specific LookupError, the above is sufficient.
-    st.error(f"An unexpected error occurred during NLTK data check/download: {e}")check/download: {e}")
+    st.error(f"An unexpected error occurred during NLTK data check/download: {e}")
 
 fields = "name,cca2" 
 response = requests.get(f"https://restcountries.com/v3.1/all?fields={fields}")

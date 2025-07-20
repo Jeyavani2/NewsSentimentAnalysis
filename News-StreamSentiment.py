@@ -23,12 +23,19 @@ import re
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 try:
     nltk.data.find('corpora/stopwords')
-    nltk.data.find('sentiment/vader_lexicon.zip')
-except LookupError: # This is the correct exception to catch when a resource is not found
+except LookupError:
     nltk.download('stopwords')
-    print("NLTK 'stopwords' downloaded successfully.")
+    st.success("NLTK 'stopwords' downloaded successfully.") # Using st.success for Streamlit UI feedback
+
+# Ensure vader_lexicon is downloaded for SentimentIntensityAnalyzer
+try:
+    nltk.data.find('sentiment/vader_lexicon.zip')
+except LookupError:
+    nltk.download('vader_lexicon')
+    st.success("NLTK 'vader_lexicon' downloaded successfully.") # Using st.success for Streamlit UI feedback
 except Exception as e:
-    print(f"An unexpected error occurred during NLTK stopwords check/download: {e}")
+    # This catch-all is good for debugging but for specific LookupError, the above is sufficient.
+    st.error(f"An unexpected error occurred during NLTK data check/download: {e}")check/download: {e}")
 
 fields = "name,cca2" 
 response = requests.get(f"https://restcountries.com/v3.1/all?fields={fields}")

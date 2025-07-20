@@ -25,7 +25,7 @@ try:
     nltk.data.find('corpora/stopwords')
 except LookupError:
     nltk.download('stopwords')
-    st.success("NLTK 'stopwords' downloaded successfully.") # Using st.success for Streamlit UI feedback
+    #st.success("NLTK 'stopwords' downloaded successfully.") # Using st.success for Streamlit UI feedback
 
 # Ensure vader_lexicon is downloaded for SentimentIntensityAnalyzer
 try:

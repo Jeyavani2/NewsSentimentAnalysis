@@ -32,7 +32,7 @@ try:
     nltk.data.find('sentiment/vader_lexicon.zip')
 except LookupError:
     nltk.download('vader_lexicon')
-    st.success("NLTK 'vader_lexicon' downloaded successfully.") # Using st.success for Streamlit UI feedback
+   # st.success("NLTK 'vader_lexicon' downloaded successfully.") # Using st.success for Streamlit UI feedback
 except Exception as e:
     # This catch-all is good for debugging but for specific LookupError, the above is sufficient.
     st.error(f"An unexpected error occurred during NLTK data check/download: {e}")
@@ -290,7 +290,7 @@ elif intro == "**_:blue[Check In for News App]_**":
                       st.error(f"Error fetching data: {response.status_code}")
                       st.write("Response content:", response.text)  # Print the error message if any
     elif selected_question == 'Cluster':    
-              dfvec=pd.read_csv(r'c:\users\91904\combined.csv')
+              dfvec=pd.read_csv(r'combined.csv')
               vect=TfidfVectorizer(stop_words='english',max_features=5000)
               dfvec['headline'] = dfvec['headline'].fillna('')
               dfvec['short_description'] = dfvec['short_description'].fillna('')
@@ -369,7 +369,7 @@ elif intro == "**_:blue[Check In for News App]_**":
         # Assume you have a combined.csv or similar file with historical data
         # For a full yearly report, you'd need significantly more data than the GNews API free tier provides
         try:
-            df_report = pd.read_csv(r'c:\users\91904\combinedsent.csv')
+            df_report = pd.read_csv(r'combinedsent.csv')
             df_report['Date'] = pd.to_datetime(df_report['date']) # Ensure 'Date' column is datetime
             df_report['Year'] = df_report['Date'].dt.year
             df_report['Month'] = df_report['Date'].dt.month
